@@ -1,4 +1,4 @@
-import InfiniteScroller from "./modules/infiniteScroller"
+import InfiniteScroller from "./modules/InfiniteScroller"
 
 export default function Carousel (){
     return(
