@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-pacif: "Pacifico", cursive;
+  --font-sg: "Sour Gummy", sans-serif;
+  --font-ad: "Antic Didone", serif;
+  --color-prim: #1f2a44;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 68px;
+}
+
+.text-gold {
+  background: linear-gradient(to right,  #f5e642, #d4a017, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold {
+  background: linear-gradient(to right, #f5e642, #d4a017, #b8860b);
+}
+
+@keyframes fade-in {
+ from { opacity: 0; transform: scale(0.95) translateY(8px); }
+ to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.animate-fade-in {
+ animation: fade-in 0.2s ease-out forwards;
+}
