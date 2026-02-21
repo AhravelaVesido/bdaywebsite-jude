@@ -161,6 +161,7 @@ export default function GreetMe() {
       });
 
       const remaining = MAX_PER_DEVICE - newCount;
+      const remainingdummy = 2 -newCount;
 
       if (newCount >= MAX_PER_DEVICE) {
         setDeviceLimitReached(true);
@@ -169,7 +170,7 @@ export default function GreetMe() {
       setMessage({
         line1: "Your name has been recorded!",
         line2: remaining > 0
-          ? `You can add ${remaining} more name${remaining > 1 ? "s" : ""} from this device.`
+          ? `You can add ${remainingdummy} more name${remainingdummy > 1 ? "s" : ""} from this device.`
           : "You've reached the limit for this device.",
         type: "success"
       });
