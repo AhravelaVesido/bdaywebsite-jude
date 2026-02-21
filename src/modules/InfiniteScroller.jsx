@@ -17,13 +17,13 @@ const medialinks = [
 ]
 
 const images = medialinks.map((item,index) => (
-                <img key={index} src={item} alt="" className="w-60 aspect-square object-cover rounded-lg bg-white overflow-none"/>
+                <img key={index} src={item} alt="" className="w-30 md:w-60 aspect-square object-cover rounded-lg bg-white overflow-none"/>
             ))
 
 export default function InfiniteScroller () {
     return(
         <div className="overflow-hidden">
-            <div className="flex gap-5 p-5 min-w-full animate-scroll ">
+            <div className="flex gap-3 p-3 md:gap-5 md:p-5 min-w-full animate-scroll ">
                 {images}
                 {images}
             </div>
