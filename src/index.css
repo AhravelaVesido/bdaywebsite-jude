@@ -63,3 +63,25 @@ html {
 .animate-fade-in {
  animation: fade-in 0.2s ease-out forwards;
 }
+
+.btn-gold {
+  background: #1f2a44; /* your default bg color */
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 0;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #f5e642, #d4a017, #b8860b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-gold:hover::after {
+  opacity: 1;
+}
