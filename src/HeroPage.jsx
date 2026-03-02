@@ -32,7 +32,7 @@ function Hero() {
 
 
             {/* Content */}
-            <div className="relative flex md:flex-row md:w-full">
+            <div className="relative flex md:flex-row md:w-full ">
                 <div className="md:flex-1 hidden md:block" />
                 <div className="flex flex-col items-center md:items-start  p-3 rounded-md mr-0 md:backdrop-blur-none md:shadow-none md:mr-0 md:bg-transparent md:flex-1 md:pl-50">
                     <h3 className="hidden md:block font-ad text-xl md:px-0 md:text-3xl font-bold text-prim pb-1">Confirm Your Attendance</h3>
