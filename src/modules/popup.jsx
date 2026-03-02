@@ -43,9 +43,10 @@ export default function Popup() {
         onClick={() => setIsOpen(false)}
       >
         <div
-          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 animate-fade-in"
+          className="flex flex-col relative bg-[#F0E8DE] rounded-2xl shadow-2xl w-full max-w-lg p-8 animate-fade-in "
           onClick={(e) => e.stopPropagation()}
         >
+ 
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-prim hover:bg-gray-200 text-gray-500 hover:text-gray-800 transition-colors"
@@ -63,6 +64,7 @@ export default function Popup() {
             <p className="font-ad font-semibold text-[red] text-x1 pb-2">Invitation is good for 2 persons</p>
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGdlMDZhNzg3bXZ3YnNwaGkxZTJhMmxrc2p1bXoyc3g1aGpuMXlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lkw7QvEHjNeiHN2poQ/giphy.gif" alt="" className="rounded-lg"/>
           </div>
+
         </div>
       </div>
     </>

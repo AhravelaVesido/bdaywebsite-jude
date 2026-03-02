@@ -252,7 +252,7 @@ export default function GreetMe() {
         type="button"
         onClick={addUser}
         disabled={deviceLimitReached}
-        className={`text-white px-8 py-2 rounded-lg bg-prim font-ad hover:bg-gold ${deviceLimitReached ? "opacity-50 cursor-not-allowed hover:bg-prim" : ""}`}
+        className={`text-white px-8 py-2 rounded-lg bg-prim font-ad btn-gold ${deviceLimitReached ? "opacity-50 cursor-not-allowed hover:bg-prim" : ""}`}
       >
         Submit
       </button>
