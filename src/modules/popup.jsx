@@ -1,13 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useConfetti } from './confettiEffect';
 
 export default function Popup() {
   const [isOpen, setIsOpen] = useState(false);
   const fireConfetti = useConfetti();
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio("https://tfmwhqdxycgpvztajpvh.supabase.co/storage/v1/object/public/Sounds/freesound_community-medieval-fanfare-6826.mp3");
+  }, []);
 
   useEffect(() => {
     setIsOpen(true);
   }, []);
+
+ useEffect(() => {
+  const handleFirstInteraction = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {});
+    }
+    document.removeEventListener("click", handleFirstInteraction);
+    document.removeEventListener("keydown", handleFirstInteraction);
+  };
+
+  document.addEventListener("click", handleFirstInteraction);
+  document.addEventListener("keydown", handleFirstInteraction);
+
+  return () => {
+    document.removeEventListener("click", handleFirstInteraction);
+    document.removeEventListener("keydown", handleFirstInteraction);
+  };
+}, []);
+
   fireConfetti();
   if (!isOpen) return null;
 
@@ -17,12 +42,10 @@ export default function Popup() {
         className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         onClick={() => setIsOpen(false)}
       >
-
         <div
           className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 animate-fade-in"
           onClick={(e) => e.stopPropagation()}
         >
- 
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-prim hover:bg-gray-200 text-gray-500 hover:text-gray-800 transition-colors"
@@ -40,10 +63,8 @@ export default function Popup() {
             <p className="font-ad font-semibold text-[red] text-x1 pb-2">Invitation is good for 2 persons</p>
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGdlMDZhNzg3bXZ3YnNwaGkxZTJhMmxrc2p1bXoyc3g1aGpuMXlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lkw7QvEHjNeiHN2poQ/giphy.gif" alt="" className="rounded-lg"/>
           </div>
-
         </div>
       </div>
     </>
   );
 }
-
