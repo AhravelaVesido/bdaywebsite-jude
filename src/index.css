@@ -44,6 +44,10 @@ html {
   scroll-padding: 68px;
 }
 
+a:hover, button:hover {
+  cursor: pointer;
+}
+
 .text-gold {
   background: linear-gradient(to right,  #f5e642, #d4a017, #b8860b);
   -webkit-background-clip: text;
@@ -70,6 +74,7 @@ html {
   overflow: hidden;
   transition: color 0.3s ease;
   z-index: 0;
+  border: none;
 }
 
 .btn-gold::after {
@@ -82,6 +87,21 @@ html {
   z-index: -1;
 }
 
+.btn-gold:hover{
+  border: 2px;
+  border-color: #1f2a44;
+  color: #1f2a44;
+  font-weight: bold;
+}
+
 .btn-gold:hover::after {
   opacity: 1;
+}
+
+@keyframes carousel-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+div[style*="carousel-scroll"]:hover {
+  animation-play-state: paused;
 }
