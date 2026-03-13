@@ -17,7 +17,7 @@ const medialinks = [
 ]
 
 const images = medialinks.map((item,index) => (
-                <img key={index} src={item} alt="" className="w-30 md:w-60 aspect-square object-cover rounded-lg bg-white overflow-none"/>
+                <img key={index} src={item} alt="" className="w-30 md:w-60 aspect-square object-cover rounded-lg bg-white border-5 border-white drop-shadow-xl"/>
             ))
 
 export default function InfiniteScroller () {

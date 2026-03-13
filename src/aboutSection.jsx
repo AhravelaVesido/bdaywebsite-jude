@@ -22,7 +22,7 @@ export default function About() {
           <h3 className="text-l md:text-2xl font-semibold">
             The Little Chronicle of Prince Thomas Jude
           </h3>
-          <hr className="w-20 h-[2px] my-1 bg-gradient-to-r from-yellow-300 to-amber-500 border-none sr" />
+          <hr className="w-20 h-[2px] my-1 md:mx-0 mx-auto bg-gradient-to-r from-yellow-300 to-amber-500 border-none sr" />
           <div>
             <p className="font-semibold">
               Be it known across the kingdom That our beloved Prince Thomas Jude

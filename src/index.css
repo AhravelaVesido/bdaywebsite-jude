@@ -105,3 +105,15 @@ a:hover, button:hover {
 div[style*="carousel-scroll"]:hover {
   animation-play-state: paused;
 }
+
+.sticker-animate {
+  animation: floatLR 6s ease-in-out infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+@keyframes floatLR {
+  0%   { transform: translateX(0px) translateZ(0px); }
+  50%  { transform: translateX(40px) translateZ(20px); }
+  100% { transform: translateX(0px) translateZ(0px); }
+}
