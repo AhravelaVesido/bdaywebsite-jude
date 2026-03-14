@@ -3,14 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
   --font-pacif: "Pacifico", cursive;
   --font-sg: "Sour Gummy", sans-serif;
-  --font-ad: "Antic Didone", serif;
+  --font-ad: "Lora", serif;
   --font-ss: "Smooch Sans", sans-serif;
-  --color-prim: #1f2a44;
+  --color-prim: #2F3E5B;
 }
 
 @keyframes scroll {
@@ -51,14 +54,14 @@ a:hover, button:hover {
 }
 
 .text-gold {
-  background: linear-gradient(to right,  #f5e642, #d4a017, #b8860b);
+  background: linear-gradient(90deg, #C9A227, #EAD79B, #F4E4B8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .bg-gold {
-  background: linear-gradient(to right, #f5e642, #d4a017, #b8860b);
+  background: linear-gradient(90deg, #C9A227, #EAD79B, #F4E4B8);
 }
 
 @keyframes fade-in {
@@ -118,4 +121,8 @@ div[style*="carousel-scroll"]:hover {
   0%   { transform: translateX(0px) translateZ(0px); }
   50%  { transform: translateX(40px) translateZ(20px); }
   100% { transform: translateX(0px) translateZ(0px); }
+}
+
+p {
+  color: #4A4A4A;
 }

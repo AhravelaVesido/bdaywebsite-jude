@@ -4,7 +4,7 @@ function Navigation() {
   const [active, setActive] = useState("Hero");
 
   useEffect(() => {
-    const sections = ["Hero", "DaysLeft", "carousel"];
+    const sections = ["Hero", "About", "carousel"];
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -38,7 +38,7 @@ function Navigation() {
               <a href={href}>{label}</a>
               {/* Animated underline */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-gradient-to-r from-yellow-300 to-amber-500 transition-all duration-300 ease-in-out
+                className={`absolute left-0 -bottom-1 h-[2px] bg-gold transition-all duration-300 ease-in-out
                   ${active === id ? "w-full" : "w-0 group-hover:w-full"}`}
               />
             </li>

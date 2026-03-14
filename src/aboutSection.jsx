@@ -1,49 +1,111 @@
+import { useState, useEffect, useRef } from 'react';
+
 export default function About() {
+  const playerContainerRef = useRef(null);
+  const playerRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const initPlayer = () => {
+      playerRef.current = new window.YT.Player(playerContainerRef.current, {
+        videoId: 'TUNp3mogmbQ',
+        playerVars: {
+          controls: 0,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          showinfo: 0,
+          iv_load_policy: 3,
+          disablekb: 1,
+          fs: 0,
+          loop: 1,
+          playlist: 'TUNp3mogmbQ',
+        },
+        events: {
+          onStateChange: (e) => {
+            setIsPlaying(e.data === window.YT.PlayerState.PLAYING);
+          }
+        }
+      });
+    };
+
+    if (window.YT && window.YT.Player) {
+      // API already loaded
+      initPlayer();
+    } else {
+      // Load the API then init
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(script);
+      window.onYouTubeIframeAPIReady = initPlayer;
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (!playerRef.current) return;
+    if (isPlaying) {
+      playerRef.current.pauseVideo();
+    } else {
+      playerRef.current.playVideo();
+    }
+  };
+
   return (
     <section
       id="About"
-      className="rounded-md my-10 md:mx-20 md:my-15 md:rounded-xl bg-[#DDCFCD]"
+      className="rounded-md my-10 md:mx-20 md:my-15 md:rounded-xl bg-[#F4E9DA]"
     >
-      {/* Background Video 
-              <div className="absolute inset-0 z-[] overflow-hidden">
-                <iframe
-                    src="https://player.vimeo.com/video/1166694246?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    className="absolute top-1/2 left-0 -translate-y-1/2 md:left-1/2 md:-translate-x-1/2 min-h-full w-auto h-[100%] md:min-w-full md:w-auto md:h-auto md:aspect-video md:min-w-[177.78vh] md:min-h-[56.25vw]"
-                    title="Background Video"
-                />
-              </div>
-            */}
       <div className="flex flex-col md:flex-row font-ad text-prim">
-        <div className="flex-1 p-5 mx-5 mt-3 bg-black rounded-md md:m-10">
-          <p>placeholder</p>
+
+        {/* Video side */}
+        <div className="flex-1 p-3 mx-5 mt-3 bg-[#F7F1E6] rounded-md md:m-10 overflow-hidden relative group">
+          <div style={{ paddingTop: '177.78%' }} className="relative">
+
+            {/* player mounts here */}
+            <div
+              ref={playerContainerRef}
+              className="absolute pointer-events-none rounded-md"
+              style={{ top: '-10%', left: '-10%', width: '120%', height: '120%' }}
+            />
+
+            {/* invisible click overlay */}
+            <div
+              onClick={togglePlay}
+              className="absolute top-0 left-0 w-full h-full cursor-pointer z-10"
+            />
+
+            {/* play/pause button */}
+            <button
+              onClick={togglePlay}
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-20 pointer-events-auto"
+            >
+              {isPlaying ? '⏸' : '▶'}
+            </button>
+
+          </div>
         </div>
-        <div className="flex-2 mx-5 my-3 p-5 bg-[#F0E8DE] text-center rounded-md md:ml-0 md:m-10 md:text-left">
-          <h3 className="text-l md:text-2xl font-semibold">
+
+        {/* Text side */}
+        <div className="flex-2 mx-5 my-3 p-5 bg-[#F7F1E6] text-center rounded-md md:ml-0 md:m-10 md:text-left">
+          <h3 className="text-l md:text-3xl font-semibold mb-3">
             The Little Chronicle of Prince Thomas Jude
           </h3>
-          <hr className="w-20 h-[2px] my-1 md:mx-0 mx-auto bg-gradient-to-r from-yellow-300 to-amber-500 border-none sr" />
+          <hr className="w-20 h-[2px] my-1 md:mx-0 mx-auto bg-gold border-none mb-3" />
           <div>
             <p className="font-semibold">
-              Be it known across the kingdom That our beloved Prince Thomas Jude
-              has filled the castle with joy since his noble arrival.{" "}
+              Let it be proclaimed that Prince Thomas Jude has filled the royal halls with laughter and light since his noble arrival. At just two moons old, he bestowed upon the realm his first radiant smile, brighter than the dawn. He delights in yogurt feasts, savors bananas and sweet potatoes, and finds wonder in melodies, especially piano ballads and his mother's karaoke songs.
             </p>
             <br />
             <p className="font-semibold">
-              At just two months, he gifted the realm his first radiant smile.
-              he delights in yogurt feasts, finds wonder in baby can read, and
-              is soothed by his mother’s gentle songs. He shows tender love for
-              animals, and treasures most his faithful teether.{" "}
+              The young Prince is a spirited adventurer, roaming the castle halls with curiosity and courage. His cries resound with strength — loud and manly indeed — a herald's trumpet announcing his presence. Ever watchful, he gazes upon the enchanted baby monitor when he awakens, awaiting voices of kin from distant lands, especially his cherished family in the Philippines.
             </p>
             <br />
             <p className="font-semibold">
-              <p className="font-semibold">
-                Be it known across the kingdom That our beloved Prince Thomas
-                Jude Has filled the castle with joy since his noble arrival.{" "}
-              </p>
+              Though he treasures his faithful teether and his loyal stuffed sheep, Sir Jojo, his heart is often captured by curious objects of the realm — the royal cellphone, the enchanted remote control, the noble comb, and even the mysterious lotion tube. His beauty is oft admired beyond the castle walls, for travelers and townsfolk alike pause to ask whether he is a young lord or lady. Let it be proclaimed once more that Prince Thomas Jude is the light of our realm, and his first year shall be celebrated with feasts, merriment, and songs that echo across the land.
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );

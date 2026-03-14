@@ -63,7 +63,7 @@ export default function BirthdayCountdown() {
   return (
     <>
         <h3 className='text-l md:text-2xl font-semibold'>Days Before I Turn {age + 1} </h3>
-        <hr className="w-20 h-[2px] my-1 bg-gradient-to-r from-yellow-300 to-amber-500 border-none" />
+        <hr className="w-20 h-[2px] my-1 bg-gold border-none" />
         <h4 className='text-xl md:text-2xl font-meduim text-center'>{timeLeft.months} Months : {timeLeft.days} Days : {timeLeft.hours} Hours : {timeLeft.minutes} Minutes : {timeLeft.seconds} Seconds</h4>
     </>
   );
