@@ -22,8 +22,7 @@ function Navigation() {
 
   const links = [
     { label: "Home", href: "#Hero", id: "Hero" },
-    { label: "About", href: "", id: "" },
-    { label: "Days", href: "#DaysLeft", id: "DaysLeft" },
+    { label: "About", href: "#About", id: "About" },
     { label: "Photos", href: "#carousel", id: "carousel" },
   ];
 

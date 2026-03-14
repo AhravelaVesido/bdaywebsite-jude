@@ -5,23 +5,23 @@ export default function SectionDate() {
   return (
     <section
       id="DaysLeft"
-      className="bg-[#F0E8DE] p-5 md:p-10 relative overflow-hidden"
+      className="bg-[#D9D9D9] p-5 md:p-10 relative overflow-hidden"
     >
       <div className="font-ad flex flex-col items-center text-prim">
         <BirthdayCountdown />
       </div>
 
-      <div>
+      <div id="About">
         <About />
       </div>
 
     {/**stickers**/}
     <img src="https://i.ibb.co/zhTLhS8T/cloud.png" alt="" className="absolute sticker-animate drop-shadow-lg right-[10%] md:top-[15%] top-[13%] rotate-[0deg] md:scale-[1.25] scale-[.8] "/>
     <img src="https://i.ibb.co/zhTLhS8T/cloud.png" alt="" className="absolute sticker-animate drop-shadow-lg md:left-[0%] left-[-10%] md:top-[30%] top-[26%] rotate-[0deg] md:scale-[.6] scale-[.5] "/>
-    <img src="https://i.ibb.co/4wR39JLk/dragons.png" alt="" className="absolute sticker-animate drop-shadow-lg md:right-[-10%] right-[-35%] md:bottom-[-5%] bottom-[-10%] rotate-[0deg] md:scale-[.6] scale-[.5] "/>
+    <img src="https://i.ibb.co/4wR39JLk/dragons.png" alt="" className="absolute sticker-animate drop-shadow-lg md:right-[-10%] right-[-45%] md:bottom-[-5%] bottom-[30%] rotate-[0deg] md:scale-[.6] scale-[.5] "/>
     <img src="https://i.ibb.co/4Z5nGpdR/boat.png" alt="" className="absolute sticker-animate drop-shadow-lg md:left-[7%] left-[0%] md:bottom-[0%] bottom-[-6%] rotate-[0deg] md:scale-[.6] scale-[.5] "/>
     <img src="https://i.ibb.co/4Z5nGpdR/boat.png" alt="" className="absolute sticker-animate drop-shadow-lg md:left-[45%] left-[30%] md:bottom-[-4%] bottom-[-7%] rotate-[0deg] md:scale-[1] scale-[.8] "/>
-    <img src="https://i.ibb.co/9kYKgNXs/dragon-sm.png" alt="" className="absolute sticker-animate drop-shadow-lg md:left-[33%] left-[30%] md:bottom-[40%] bottom-[8%] rotate-[0deg] md:scale-[.5] scale-[.8] "/>
+    <img src="https://i.ibb.co/9kYKgNXs/dragon-sm.png" alt="" className="absolute sticker-animate drop-shadow-lg md:left-[33%] left-[30%] md:bottom-[40%] bottom-[5%] rotate-[0deg] md:scale-[.5] scale-[.8] "/>
 
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 transform rotate-180 ">
         <svg

@@ -1,4 +1,4 @@
-import GuestList,{InfiniteNameCarousel} from "./modules/GuestList"
+import {GuestList,InfiniteNameCarousel} from "./modules/Guestlist"
 
 export default function CarouselList (){
 

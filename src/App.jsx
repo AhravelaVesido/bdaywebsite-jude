@@ -5,8 +5,7 @@ import Hero from './HeroPage'
 import SectionDate from './section1'
 import Carousel from './section2'
 import Popup from './modules/popup'
-
-import CarouselList from './sectionList'
+import InvitationDetails from './section3'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +17,7 @@ function App() {
      <Hero/>
      <SectionDate />
      <Carousel/>
+     <InvitationDetails/>
     </>
   )
 }
