@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="About"
-      className="rounded-md my-10 md:mx-20 md:my-15 md:rounded-xl bg-[#F0DFCF]"
+      className="rounded-md my-10 md:mx-20 md:my-15 md:rounded-xl bg-[#DDCFCD]"
     >
       {/* Background Video 
               <div className="absolute inset-0 z-[] overflow-hidden">
@@ -26,14 +26,14 @@ export default function About() {
           <div>
             <p className="font-semibold">
               Be it known across the kingdom That our beloved Prince Thomas Jude
-              Has filled the castle with joy since his noble arrival.{" "}
+              has filled the castle with joy since his noble arrival.{" "}
             </p>
             <br />
             <p className="font-semibold">
-              At just two months, He gifted the realm his first radiant smile.
-              He delights in yogurt feasts, Finds wonder in Baby Can Read, And
+              At just two months, he gifted the realm his first radiant smile.
+              he delights in yogurt feasts, finds wonder in baby can read, and
               is soothed by his mother’s gentle songs. He shows tender love for
-              animals, And treasures most his faithful teether.{" "}
+              animals, and treasures most his faithful teether.{" "}
             </p>
             <br />
             <p className="font-semibold">

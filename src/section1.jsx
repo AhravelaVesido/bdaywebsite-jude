@@ -5,7 +5,7 @@ export default function SectionDate() {
   return (
     <section
       id="DaysLeft"
-      className="bg-[#D9D9D9] p-5 md:p-10 relative overflow-hidden"
+      className="bg-[#EDEDED] p-5 md:p-10 relative overflow-hidden"
     >
       <div className="font-ad flex flex-col items-center text-prim">
         <BirthdayCountdown />

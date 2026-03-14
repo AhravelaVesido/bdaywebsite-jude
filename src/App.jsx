@@ -6,6 +6,7 @@ import SectionDate from './section1'
 import Carousel from './section2'
 import Popup from './modules/popup'
 import InvitationDetails from './section3'
+import Footer from './Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
      <SectionDate />
      <Carousel/>
      <InvitationDetails/>
+     <Footer/>
     </>
   )
 }

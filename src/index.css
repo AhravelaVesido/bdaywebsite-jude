@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-pacif: "Pacifico", cursive;
   --font-sg: "Sour Gummy", sans-serif;
   --font-ad: "Antic Didone", serif;
+  --font-ss: "Smooch Sans", sans-serif;
   --color-prim: #1f2a44;
 }
 
