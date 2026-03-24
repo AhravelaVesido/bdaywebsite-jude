@@ -4,7 +4,7 @@ function Navigation() {
   const [active, setActive] = useState("Hero");
 
   useEffect(() => {
-    const sections = ["Hero", "About", "carousel"];
+    const sections = ["Hero", "About", "carousel", "details"];
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -24,6 +24,7 @@ function Navigation() {
     { label: "Home", href: "#Hero", id: "Hero" },
     { label: "About", href: "#About", id: "About" },
     { label: "Photos", href: "#carousel", id: "carousel" },
+    { label: "Details", href: "#details", id: "details" },
   ];
 
   return (
