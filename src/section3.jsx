@@ -29,7 +29,7 @@ export default function InvitationDetails() {
               </h3>
             </div>
             <p className="font-semibold text-m text-center mt-[5px] mb-[5px] md:mb-0 lg:text-xl">
-              his royal summons is for you and one companion only. Kindly
+              His royal summons is for you and one companion only. Kindly
               reserve your seat at least two weeks before the grand feast.
             </p>
             <br />
