@@ -8,63 +8,92 @@ export default function BirthdayCountdown() {
     minutes: 0,
     seconds: 0
   });
-  
+
   const [age, setAge] = useState(0);
 
-  // Set birth year and birthday here
-  const birthYear = 2025; // Change to actual birth year
-  const birthMonth = 4; // 0=Jan, 1=Feb, ..., 11=Dec
-  const birthDay = 28; // Day of month
+  const birthYear = 2025;
+  const birthMonth = 4;
+  const birthDay = 28;
 
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
       const currentYear = now.getFullYear();
-      
+
       let targetDate = new Date(currentYear, birthMonth, birthDay, 0, 0, 0);
-      
-      // Calculate age
       let calculatedAge = currentYear - birthYear;
-      
-      // If birthday hasn't happened yet this year
+
       if (now < targetDate) {
         calculatedAge = calculatedAge - 1;
       } else {
-        // Birthday has passed, set target to next year
         targetDate = new Date(currentYear + 1, birthMonth, birthDay, 0, 0, 0);
       }
-      
+
       setAge(calculatedAge);
-      
+
       const difference = targetDate - now;
-      
-      // Calculate months
-      const months = targetDate.getMonth() - now.getMonth() + 
-                    (12 * (targetDate.getFullYear() - now.getFullYear()));
-      
-      // Create temp date to calculate remaining days
+
+      const months = targetDate.getMonth() - now.getMonth() +
+        (12 * (targetDate.getFullYear() - now.getFullYear()));
+
       const tempDate = new Date(now);
       tempDate.setMonth(tempDate.getMonth() + months);
-      
+
       const days = Math.floor((targetDate - tempDate) / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((difference / 1000 / 60) % 60);
       const seconds = Math.floor((difference / 1000) % 60);
-      
+
       setTimeLeft({ months, days, hours, minutes, seconds });
     };
 
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
-
     return () => clearInterval(timer);
   }, [birthYear, birthMonth, birthDay]);
 
+  const units = [
+    { value: timeLeft.months, label: 'Months' },
+    { value: timeLeft.days, label: 'Days' },
+    { value: timeLeft.hours, label: 'Hours' },
+    { value: timeLeft.minutes, label: 'Minutes' },
+    { value: timeLeft.seconds, label: 'Seconds' },
+  ];
+
   return (
     <>
-        <h3 className='text-l md:text-2xl font-semibold'>Days Before I Turn {age + 1} </h3>
-        <hr className="w-20 h-[2px] my-1 bg-gold border-none" />
-        <h4 className='text-xl md:text-2xl font-meduim text-center'>{timeLeft.months} Months : {timeLeft.days} Days : {timeLeft.hours} Hours : {timeLeft.minutes} Minutes : {timeLeft.seconds} Seconds</h4>
+      <div className="countdown-scroll">
+        {/* Title */}
+        <div className="countdown-title-row">
+          <span className="star">✦</span>
+          <h3 className="text-l md:text-2xl font-semibold text-center" style={{ color: '#3b2f1e' }}>
+            Days Before I Turn {age + 1}
+          </h3>
+          <span className="star">✦</span>
+        </div>
+
+        {/* Crown divider */}
+        <div className="countdown-crown-divider">
+          <span className="text-base leading-none">👑</span>
+        </div>
+
+        {/* Time unit cards */}
+        <div className="countdown-units">
+          {units.map((unit, i) => (
+            <React.Fragment key={unit.label}>
+              <div className="countdown-unit">
+                <div className="countdown-unit-value">
+                  {String(unit.value).padStart(2, '0')}
+                </div>
+                <div className="countdown-unit-label">{unit.label}</div>
+              </div>
+              {i < units.length - 1 && (
+                <span className="countdown-separator">:</span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

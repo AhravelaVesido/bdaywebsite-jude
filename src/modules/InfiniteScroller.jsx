@@ -16,17 +16,30 @@ const medialinks = [
     "https://i.ibb.co/gLJdpqch/Messenger-creation-1636926704344834.jpg"
 ]
 
-const images = medialinks.map((item,index) => (
-                <img key={index} src={item} alt="" className="w-30 md:w-60 aspect-square object-cover rounded-lg bg-white border-5 border-white drop-shadow-xl"/>
-            ))
-
-export default function InfiniteScroller () {
-    return(
-        <div className="overflow-hidden">
-            <div className="flex gap-3 p-3 md:gap-5 md:p-5 min-w-full animate-scroll ">
-                {images}
-                {images}
+export default function InfiniteScroller() {
+    return (
+        <>
+            <div className="scroll-wrapper overflow-hidden">
+                <div className="scroll-track">
+                    {medialinks.map((src, index) => (
+                        <img
+                            key={`a-${index}`}
+                            src={src}
+                            alt={`Prince Thomas Jude photo ${index + 1}`}
+                            className="photo-card"
+                        />
+                    ))}
+                    {medialinks.map((src, index) => (
+                        <img
+                            key={`b-${index}`}
+                            src={src}
+                            alt={`Prince Thomas Jude photo ${index + 1}`}
+                            className="photo-card"
+                            aria-hidden="true"
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
