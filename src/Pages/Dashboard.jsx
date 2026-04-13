@@ -99,7 +99,7 @@ export default function Dashboard() {
           </span>
         </div>
 
-        <div className="w-16 md:w-20" />
+        <div className="w-0 md:w-20" />
       </nav>
 
       {/* Content */}

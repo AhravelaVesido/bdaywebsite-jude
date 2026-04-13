@@ -9,7 +9,7 @@ export default function About() {
   useEffect(() => {
     const initPlayer = () => {
       playerRef.current = new window.YT.Player(playerContainerRef.current, {
-        videoId: 'TUNp3mogmbQ',
+        videoId: '1fKvtF7roKw',
         playerVars: {
           controls: 0,
           rel: 0,
@@ -20,7 +20,7 @@ export default function About() {
           disablekb: 1,
           fs: 0,
           loop: 1,
-          playlist: 'TUNp3mogmbQ',
+          playlist: '1fKvtF7roKw',
         },
         events: {
           onStateChange: (e) => {
