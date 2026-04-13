@@ -10,18 +10,12 @@ export default function Popup() {
     audioRef.current = new Audio("https://tfmwhqdxycgpvztajpvh.supabase.co/storage/v1/object/public/Sounds/freesound_community-medieval-fanfare-6826.mp3");
   }, []);
 
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
+  useEffect(() => { setIsOpen(true); }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch(() => {});
-      }
+      audioRef.current?.play().catch(() => {});
     }, 300);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,37 +23,80 @@ export default function Popup() {
   if (!isOpen) return null;
 
   return (
-    <>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: "rgba(10,15,35,0.75)", backdropFilter: "blur(4px)" }}
+      onClick={() => setIsOpen(false)}
+    >
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-        onClick={() => setIsOpen(false)}
+        className="relative w-full max-w-sm rounded-2xl overflow-hidden animate-fade-in"
+        style={{ border: "2px solid #c9a84c", boxShadow: "0 0 0 1px #e8d5a3, 0 24px 60px rgba(0,0,0,0.5)" }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div
-          className="flex flex-col relative bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 animate-fade-in"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button
-            onClick={() => {
-              audioRef.current?.play().catch(() => {});
-              setIsOpen(false);
-            }}
-            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-prim hover:bg-gray-200 text-gray-500 hover:text-gray-800 transition-colors"
-            aria-label="Close"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
 
-          <div className="flex flex-col items-center p-3">
-            <h3 className="font-ad text-xl md:px-0 md:text-2xl font-bold text-prim pb-1">You are invited!</h3>
-            <hr className="w-20 h-[2px] mb-2 bg-gold border-none" />
-            <p className="font-ad font-semibold text-[red] text-x1 pb-2">Invitation is good for 2 persons</p>
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGdlMDZhNzg3bXZ3YnNwaGkxZTJhMmxrc2p1bXoyc3g1aGpuMXlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lkw7QvEHjNeiHN2poQ/giphy.gif" alt="" className="rounded-lg"/>
-          </div>
+        {/* Top banner */}
+        <div className="flex items-center justify-center gap-2 py-3" style={{ background: "#1a2744", borderBottom: "2px solid #c9a84c" }}>
+          <span className="text-sm" style={{ color: "#c9a84c" }}>✦</span>
+          <p className="m-0 text-xs font-semibold tracking-widest font-ad" style={{ color: "#e8d5a3" }}>
+            ROYAL PROCLAMATION
+          </p>
+          <span className="text-sm" style={{ color: "#c9a84c" }}>✦</span>
         </div>
+
+        {/* Close button */}
+        <button
+          onClick={() => { audioRef.current?.play().catch(() => {}); setIsOpen(false); }}
+          aria-label="Close"
+          className="absolute top-2 right-3 w-6 h-6 flex items-center justify-center rounded-full text-xs cursor-pointer"
+          style={{ background: "rgba(201,168,76,0.15)", border: "1px solid #c9a84c", color: "#c9a84c" }}
+        >
+          ✕
+        </button>
+
+        {/* Body */}
+        <div className="flex flex-col items-center px-6 pt-4 pb-5 text-center" style={{ background: "#f5f0e8" }}>
+
+          {/* Title */}
+          <h2 className="font-ad font-bold mb-1" style={{ color: "#1a2744", fontSize: "22px" }}>
+            You Are Invited!
+          </h2>
+
+          {/* Gold divider */}
+          <div className="flex items-center gap-2 justify-center my-2">
+            <div className="h-px w-8" style={{ background: "#c9a84c" }} />
+            <span className="text-xs" style={{ color: "#c9a84c" }}>✦</span>
+            <div className="h-px w-8" style={{ background: "#c9a84c" }} />
+          </div>
+
+          {/* Badge */}
+          <div className="inline-block rounded-full px-4 py-1 mb-3" style={{ background: "#1a2744", border: "1px solid #c9a84c" }}>
+            <p className="m-0 font-ad font-semibold tracking-wide" style={{ color: "#e8d5a3", fontSize: "11px" }}>
+              ♛ This invitation is good for 2 persons
+            </p>
+          </div>
+
+          {/* GIF */}
+          <div className="w-full rounded-lg overflow-hidden mb-4" style={{ border: "2px solid #c9a84c", maxHeight: "500px" }}>
+            <img
+              src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGdlMDZhNzg3bXZ3YnNwaGkxZTJhMmxrc2p1bXoyc3g1aGpuMXlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lkw7QvEHjNeiHN2poQ/giphy.gif"
+              alt="Royal celebration"
+              className="w-full block object-cover"
+            />
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => { audioRef.current?.play().catch(() => {}); setIsOpen(false); }}
+            className="w-full font-ad font-semibold tracking-widest py-2 rounded-lg cursor-pointer transition-opacity hover:opacity-90 text-sm"
+            style={{ background: "#1a2744", border: "2px solid #c9a84c", color: "#e8d5a3" }}
+          >
+            ✦ Enter the Kingdom ✦
+          </button>
+        </div>
+
+        {/* Bottom accent */}
+        <div className="h-1" style={{ background: "#1a2744", borderTop: "1px solid #c9a84c" }} />
       </div>
-    </>
+    </div>
   );
 }
