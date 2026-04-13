@@ -7,7 +7,7 @@ export default function Popup() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio("https://tfmwhqdxycgpvztajpvh.supabase.co/storage/v1/object/public/Sounds/freesound_community-medieval-fanfare-6826.mp3");
+   audioRef.current = new Audio("/fanfare.mp3");
   }, []);
 
   useEffect(() => { setIsOpen(true); }, []);
