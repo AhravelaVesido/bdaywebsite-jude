@@ -114,15 +114,15 @@ export default function About() {
           </div>
 
           <div className='text-[#4a4a4a]'>
-            <p className="font-semibold text-m lg:text-l">
+            <p className="font-semibold text-m lg:text-xl">
               Let it be proclaimed that Prince Thomas Jude has filled the royal halls with laughter and light since his noble arrival. At just two moons old, he bestowed upon the realm his first radiant smile, brighter than the dawn. He delights in yogurt feasts, savors bananas and sweet potatoes, and finds wonder in melodies, especially piano ballads and his mother's karaoke songs.
             </p>
             <br />
-            <p className="font-semibold text-m lg:text-l">
+            <p className="font-semibold text-m lg:text-xl">
               The young Prince is a spirited adventurer, roaming the castle halls with curiosity and courage. His cries resound with strength — loud and manly indeed — a herald's trumpet announcing his presence. Ever watchful, he gazes upon the enchanted baby monitor when he awakens, awaiting voices of kin from distant lands, especially his cherished family in the Philippines.
             </p>
             <br />
-            <p className="font-semibold text-m lg:text-l">
+            <p className="font-semibold text-m lg:text-xl">
               Though he treasures his faithful teether and his loyal stuffed sheep, Sir Jojo, his heart is often captured by curious objects of the realm — the royal cellphone, the enchanted remote control, the noble comb, and even the mysterious lotion tube. His beauty is oft admired beyond the castle walls, for travelers and townsfolk alike pause to ask whether he is a young lord or lady. Let it be proclaimed once more that Prince Thomas Jude is the light of our realm, and his first year shall be celebrated with feasts, merriment, and songs that echo across the land.
             </p>
           </div>
