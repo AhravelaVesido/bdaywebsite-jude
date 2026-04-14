@@ -85,7 +85,7 @@ export default function Dashboard() {
     style={{ background: "#1a2744", borderBottom: "2px solid #c9a84c" }}
   >
     {/* Left — Back button */}
-    <div className="flex-1 md:flex-none flex items-center">
+    <div className="flex-1  flex items-center">
       <button
         onClick={() => navigate("/")}
         className="flex items-center gap-1 px-3 py-1.5 rounded-md text-xs tracking-wide cursor-pointer transition-opacity hover:opacity-80"
@@ -96,7 +96,7 @@ export default function Dashboard() {
     </div>
 
     {/* Center on mobile, left-shifted on desktop */}
-    <div className="flex-1 md:flex-none flex items-center justify-center md:justify-start md:ml-6 gap-2">
+    <div className="md:flex-1 flex items-center justify-center md:ml-6 gap-2">
       <span className="text-lg" style={{ color: "#c9a84c" }}>♛</span>
       <span className="font-semibold text-xs md:text-sm tracking-widest" style={{ color: "#e8d5a3" }}>
         THOMAS JUDE'S BIRTHDAY
@@ -104,7 +104,7 @@ export default function Dashboard() {
     </div>
 
     {/* Right spacer — only needed on mobile for centering */}
-    <div className="flex-1 md:hidden" />
+    <div className="flex-1" />
 </nav>
 
       {/* Content */}

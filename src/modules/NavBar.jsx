@@ -31,7 +31,7 @@ function Navigation() {
     <nav className="w-dvw text-black bg-prim sticky top-0 z-11">
       <div className="text-center p-2 md:flex md:p-5 md:justify-between">
         <div className="flex items-center justify-center md:justify-start gap-2">
-          <span className="text-xl" style={{ color: "#c9a84c" }}>♛</span>
+          <span className="text-2xl pb-[3px]" style={{ color: "#c9a84c" }}>♛</span>
           <span className="font-ad text-2xl uppercase font-semibold text-gold md:text-xl">
             THOMAS JUDE'S BIRTHDAY
           </span>
@@ -42,7 +42,7 @@ function Navigation() {
               <a href={href}>{label}</a>
               {/* Animated underline */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-gold transition-all duration-300 ease-in-out
+                className={`absolute left-0 bottom-0 h-[2px] bg-gold transition-all duration-300 ease-in-out
                   ${active === id ? "w-full" : "w-0 group-hover:w-full"}`}
               />
             </li>
