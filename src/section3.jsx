@@ -60,12 +60,12 @@ export default function InvitationDetails() {
               </h3>
             </div>
             <p className="font-semibold text-m text-center mt-[5px] mb-[5px] md:mb-0 lg:text-xl">
-              On the blessed day of Saturday, May 30, 2026, the kingdom shall
+              On the blessed day of Saturday, May 30, 2026, 9:30 am ,the kingdom shall
               gather.
             </p>
             <br />
             <p className="font-semibold text-m text-center mt-[5px] mb-[5px] md:mb-0 lg:text-xl italic" style={{ color: "#7a6a3a" }}>
-              Sa banal na araw ng Sabado, Mayo 30, 2026, magtitipon ang buong
+              Sa banal na araw ng Sabado, Mayo 30, 2026, 9:30 ng umaga, magtitipon ang buong
               kaharian.
             </p>
           </div>
