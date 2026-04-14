@@ -30,7 +30,7 @@ function Navigation() {
   return (
     <nav className="w-dvw text-black bg-prim sticky top-0 z-11">
       <div className="text-center p-2 md:flex md:p-5 md:justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center md:justify-start gap-2">
           <span className="text-xl" style={{ color: "#c9a84c" }}>♛</span>
           <span className="font-ad text-2xl uppercase font-semibold text-gold md:text-xl">
             THOMAS JUDE'S BIRTHDAY
