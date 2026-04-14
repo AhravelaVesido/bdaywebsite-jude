@@ -80,7 +80,7 @@ export default function Dashboard() {
     <div className="min-h-screen font-ad" style={{ background: "#f5f0e8" }}>
 
     {/* Navbar */}
-    <nav
+  <nav
     className="flex items-center px-4 md:px-8 h-14 md:h-16"
     style={{ background: "#1a2744", borderBottom: "2px solid #c9a84c" }}
   >
