@@ -80,32 +80,27 @@ export default function Dashboard() {
     <div className="min-h-screen font-ad" style={{ background: "#f5f0e8" }}>
 
     {/* Navbar */}
-  <nav
-    className="flex items-center px-4 md:px-8 h-14 md:h-16"
-    style={{ background: "#1a2744", borderBottom: "2px solid #c9a84c" }}
-  >
-    {/* Left — Back button */}
-    <div className="flex-1 md:flex-none flex items-center">
-      <button
-        onClick={() => navigate("/")}
-        className="flex items-center gap-1 px-3 py-1.5 rounded-md text-xs tracking-wide cursor-pointer transition-opacity hover:opacity-80"
-        style={{ border: "1px solid #c9a84c", color: "#c9a84c", background: "transparent" }}
+   <nav
+        className="flex items-center justify-between px-4 md:px-8 h-14 md:h-16"
+        style={{ background: "#1a2744", borderBottom: "2px solid #c9a84c" }}
       >
-        ← Back
-      </button>
-    </div>
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-md text-xs md:text-sm tracking-wide cursor-pointer transition-opacity hover:opacity-80"
+          style={{ border: "1px solid #c9a84c", color: "#c9a84c", background: "transparent" }}
+        >
+          ← Back
+        </button>
 
-    {/* Center on mobile, left-shifted on desktop */}
-    <div className="flex-1 md:flex-none flex items-center justify-center md:justify-start md:ml-6 gap-2">
-      <span className="text-lg" style={{ color: "#c9a84c" }}>♛</span>
-      <span className="font-semibold text-xs md:text-sm tracking-widest" style={{ color: "#e8d5a3" }}>
-        THOMAS JUDE'S BIRTHDAY
-      </span>
-    </div>
+        <div className="flex items-center gap-2">
+          <span className="text-lg" style={{ color: "#c9a84c" }}>♛</span>
+          <span className="font-semibold text-xs md:text-sm tracking-widest" style={{ color: "#e8d5a3" }}>
+            THOMAS JUDE'S BIRTHDAY
+          </span>
+        </div>
 
-    {/* Right spacer — only needed on mobile for centering */}
-    <div className="flex-1 md:hidden" />
-</nav>
+        <div className="w-0 md:w-20" />
+    </nav>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-10">
